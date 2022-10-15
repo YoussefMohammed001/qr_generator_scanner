@@ -37,24 +37,26 @@ class _ScanQrCodeState extends State<ScanQrCode> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Expanded(
-          child: QRView(key: qrKey,
-            onQRViewCreated: onQRViewCreated,
-            overlay: QrScannerOverlayShape(
-              cutOutSize: MediaQuery.of(context).size.width * 0.8,
-              borderWidth: 10,
-              borderLength: 10,
-              borderRadius: 10,
+    return Expanded(
+      child: Stack(
+        children: [
+          Expanded(
+            child: QRView(key: qrKey,
+              onQRViewCreated: onQRViewCreated,
+              overlay: QrScannerOverlayShape(
+                cutOutSize: MediaQuery.of(context).size.width * 0.8,
+                borderWidth: 10,
+                borderLength: 10,
+                borderRadius: 10,
+              ),
             ),
           ),
-        ),
-        Text(
-          barcode != null ? "${barcode!.code}" : "scan code",
-          maxLines: 3,
-        )
-      ],
+          Text(
+            barcode != null ? "${barcode!.code}" : "scan code",
+            maxLines: 3,
+          )
+        ],
+      ),
     );
   }
 
