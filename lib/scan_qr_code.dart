@@ -12,6 +12,7 @@ class ScanQrCode extends StatefulWidget {
   @override
   State<ScanQrCode> createState() => _ScanQrCodeState();
 }
+//
 
 class _ScanQrCodeState extends State<ScanQrCode> {
   final qrKey = GlobalKey(debugLabel: 'QR');
@@ -42,7 +43,8 @@ class _ScanQrCodeState extends State<ScanQrCode> {
         alignment: AlignmentDirectional.bottomCenter,
         children: [
           Expanded(
-            child: QRView(key: qrKey,
+            child: QRView(
+              key: qrKey,
               onQRViewCreated: onQRViewCreated,
               overlay: QrScannerOverlayShape(
                 cutOutSize: MediaQuery.of(context).size.width * 0.8,
@@ -70,6 +72,7 @@ class _ScanQrCodeState extends State<ScanQrCode> {
       ),
     );
   }
+
 
   void onQRViewCreated(QRViewController controller){
     setState(() {
