@@ -46,12 +46,12 @@ class _MainScreenState extends State<MainScreen> {
       currentIndex: index,
       items: const [
         BottomNavigationBarItem(
-          label: "Home",
-          icon: Icon(Icons.home_filled,),
+          label: "Generate qr code",
+          icon: Icon(Icons.qr_code,),
         ),
         BottomNavigationBarItem(
-          label: "Categories",
-          icon: Icon(Icons.category_outlined),
+          label: "Scan qr code",
+          icon: Icon(Icons.qr_code_scanner),
         ),
 
 
