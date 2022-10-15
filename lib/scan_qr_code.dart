@@ -39,6 +39,7 @@ class _ScanQrCodeState extends State<ScanQrCode> {
   Widget build(BuildContext context) {
     return Expanded(
       child: Stack(
+        alignment: AlignmentDirectional.bottomCenter,
         children: [
           Expanded(
             child: QRView(key: qrKey,
@@ -51,9 +52,19 @@ class _ScanQrCodeState extends State<ScanQrCode> {
               ),
             ),
           ),
-          Text(
-            barcode != null ? "${barcode!.code}" : "scan code",
-            maxLines: 3,
+          Container(
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.grey,
+
+              borderRadius: BorderRadius.circular(8),
+              
+            ),
+            child: Text(
+              barcode != null ? "${barcode!.code}" : "scan code",
+              maxLines: 3,
+            ),
           )
         ],
       ),
